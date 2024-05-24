@@ -1,0 +1,4 @@
+## commands
+```
+docker compose up
+```
