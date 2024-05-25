@@ -8,3 +8,17 @@ services:
       - KEYCLOAK_ADMIN_PASSWORD=admin
     ports:
       - 8080:8080
+
+  nest:
+    build: ./nest/
+    environment:
+      - CLIENT_SECRET=R6I6DzJ8auh7krPZCkzcwKGEgvAFgifV
+    ports:
+      - 3000:3000
+    # extra_hosts:
+    # - "host.docker.internal:host-gateway"
+
+  react:
+    build: ./react/
+    ports:
+      - 5173:5173
