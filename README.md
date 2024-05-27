@@ -1,4 +1,5 @@
 ## commands
+
 ```
 docker compose up
 ```
@@ -11,7 +12,36 @@ docker compose up --build
 docker-compose down --rmi local
 ```
 
+```
+docker exec -it liminha-db_mysql mysql keycloak_db -u admin -p
+```
+
+```
+docker-compose rm -v
+```
+
+```
+docker volume rm .docker
+```
+
+```
+docker-compose up --force-recreate
+```
+
+## Commands Mysql Terminal
+
+```
+show databases;
+
+use keycloak_db;
+
+show tables;
+```
+
+
+
 ## Applications
+
 > Keycloak running on port 8080
 
 > Nest running on port 3000
@@ -19,6 +49,7 @@ docker-compose down --rmi local
 > React running on port 5173
 
 ## Configure Keycloak
+
 - Open Keycloak admin on port 8080 with login and password admin
 - Create a realm with name "advisor"
 - Create a "Client" with clientId=nest and ClientType=OpenId Connect

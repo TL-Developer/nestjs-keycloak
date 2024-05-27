@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keyclok-deployment
+  # namespace: dotnet-gotenberg-node-react-pdf-k8s
+  labels:
+    app: keyclok
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keyclok
+  template:
+    metadata:
+      labels:
+        app: keyclok
+    spec:
+      containers:
+      - name: keyclok
+        image: liminha/keyclok:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "1000m"
+---
